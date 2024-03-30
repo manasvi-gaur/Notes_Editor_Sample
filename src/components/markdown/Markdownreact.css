@@ -1,0 +1,44 @@
+.center-div {
+    width: 160vmin;
+    height: 80vmin;
+    display: flex;
+}
+
+.title-input{
+    width: 160vmin;
+    margin-bottom: 2vmin;
+    margin-top: 1vmin;
+}
+.mode-toggle-button{
+    display: flex;
+    justify-content: end;
+}
+
+.submit{
+    margin-top: 0.7vmin;
+}
+
+
+
+/* 
+.left-side,
+.right-side {
+    height: 80vh;
+    border: 1px solid black;
+    font-size: 25px;
+    padding: 10px 20px;
+}
+    
+.left-side {
+    background-color:
+    black; color: aliceblue;
+}
+
+@media (max-width: 768px) {
+    .center-div { width: 80vw; margin: 100px auto; display: block;
+    }
+    .left-side,
+    .right-side {
+         width: 100%;
+    }
+} */
