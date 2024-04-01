@@ -21,7 +21,7 @@ const Login: React.FC = () => {
       body: JSON.stringify(data),
     });
     const resJson = await res.json()
-    if(resJson.status == "Logined In"){
+    if(resJson.status == "ok"){
         window.localStorage.setItem('id', resJson.id)
         navigate('/notes')
     }else{

@@ -37,7 +37,7 @@ class LoginView(APIView):
     "message": f"No user with the corresponding email and password exists"
     }, 
     status=status.HTTP_404_NOT_FOUND)
-  return Response({ "status": "Logined In", 'id': user.id })
+  return Response({ "status": "ok", 'id': user.id })
 
 class CreateNotesView(generics.CreateAPIView):
     queryset = Notes.objects.all()
