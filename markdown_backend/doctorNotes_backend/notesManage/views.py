@@ -1,12 +1,12 @@
-from rest_framework import generics
+from rest_framework.generics import CreateAPIView, UpdateAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import User, Notes
+from .models import User, Markdownedit
 from .services import getUserService, getLoginUserService
-from .serializers import UserSerializer, NotesSerializer
+from .serializers import UserSerializer, MarkdowneditSerializer
 
-class CreateUserView(generics.CreateAPIView):
+class CreateUserView(CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -17,7 +17,7 @@ class CreateUserView(generics.CreateAPIView):
         headers = self.get_success_headers(serializer.data)
         return Response({"status":"ok","data":serializer.data}, status=status.HTTP_201_CREATED, headers=headers)
 
-class UpdateUserView(generics.UpdateAPIView):
+class UpdateUserView(UpdateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -39,9 +39,9 @@ class LoginView(APIView):
     status=status.HTTP_404_NOT_FOUND)
   return Response({ "status": "ok", 'id': user.id })
 
-class CreateNotesView(generics.CreateAPIView):
-    queryset = Notes.objects.all()
-    serializer_class = NotesSerializer
+class CreateNotesView(CreateAPIView):
+    queryset = Markdownedit.objects.all()
+    serializer_class = MarkdowneditSerializer
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -50,9 +50,9 @@ class CreateNotesView(generics.CreateAPIView):
         headers = self.get_success_headers(serializer.data)
         return Response({"status":"ok","data":serializer.data}, status=status.HTTP_201_CREATED, headers=headers)
 
-class UpdateNotesView(generics.UpdateAPIView):
-    queryset = Notes.objects.all()
-    serializer_class = NotesSerializer
+class UpdateNotesView(UpdateAPIView):
+    queryset =Markdownedit.objects.all()
+    serializer_class = MarkdowneditSerializer
 
     def update(self, request, *args, **kwargs):
         instance = self.get_object()

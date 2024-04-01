@@ -32,13 +32,17 @@ const Login: React.FC = () => {
   return (
     <div className="login-container">
       <h2>Login</h2>
+      <label htmlFor="email">Email Address</label>
       <input
+        id="email"
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
+      <label htmlFor="password">Password</label>
       <input
+        id="password"
         type="password"
         placeholder="Password"
         value={password}

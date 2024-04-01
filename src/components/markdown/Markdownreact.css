@@ -1,6 +1,6 @@
 .center-div {
     width: 160vmin;
-    height: 80vmin;
+    min-height: 60vmin;
     display: flex;
     justify-content: start;
 }
@@ -9,6 +9,8 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+    width: 160vmin;
+    min-height: 60vmin;
 }
 
 .title-input{

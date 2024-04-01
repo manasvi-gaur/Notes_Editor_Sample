@@ -34,18 +34,21 @@ const Signup: React.FC = () => {
   return (
     <div className="signup-container">
       <h2>Signup</h2>
+      <label htmlFor="email">Email Address</label>
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
+      <label htmlFor="username">User Name</label>
       <input
         type="text"
         placeholder="username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
+      <label htmlFor="password">Password</label>
       <input
         type="password"
         placeholder="Password"

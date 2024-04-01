@@ -1,9 +1,6 @@
 from .models import User
 
 def getUserService(request):
- """
- Get the user with a particular user_id
- """
  try:
   data = request.data
   id = data.get('id', None)
@@ -13,9 +10,6 @@ def getUserService(request):
   return None
 
 def getLoginUserService(request):
- """
- Return the user id
- """
  data = request.data
  email = data.get('email', None)
  password = data.get('password', None)

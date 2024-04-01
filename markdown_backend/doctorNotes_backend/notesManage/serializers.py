@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from .models import User, Notes
+from .models import User, Markdownedit
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'email', 'password', 'username']
 
-class NotesSerializer(serializers.ModelSerializer):
+class MarkdowneditSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Notes
+        model = Markdownedit
         fields = ['id', 'title', 'user', 'notes', 'file']

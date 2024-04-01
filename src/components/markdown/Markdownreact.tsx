@@ -20,16 +20,15 @@ function Markdownreact() {
     })
       .then((res) => res.json())
       .then((resJson) => {
-        // console.log(resJson);
-        const dataset = new Set(users)
+        const dataset = new Set(users);
         resJson.users.map((user) => {
           const data = {
             id: user.id,
             display: user.username,
           };
-          dataset.add(data)
+          dataset.add(data);
         });
-        setUsers([...dataset])
+        setUsers([...dataset]);
       });
   };
   useEffect(() => {
@@ -103,31 +102,41 @@ function Markdownreact() {
           </div>
         )}
         {mode === "edit" && (
-          <MentionsInput
-            className="markdown-input center-div"
-            value={mark}
-            placeholder="Write something!"
-            onChange={(e) => setMarkdown(e.target.value)}
-            style={{ color: "black" }}
-          >
-            <Mention trigger="@" data={users}></Mention>
-          </MentionsInput>
+          <>
+            <MentionsInput
+              className="markdown-input center-div"
+              value={mark}
+              placeholder="Write something!"
+              onChange={(e) => setMarkdown(e.target.value)}
+              style={{ color: "black" }}
+            >
+              <Mention trigger="@" data={users}></Mention>
+            </MentionsInput>
+            <div className="upload-button">
+              <input type="file" onChange={handleUpload} />
+            </div>
+          </>
         )}
       </div>
+
       {mode === "preview" && (
         <div className="markdown-preview">
+          <Markdown className="title-preview">
+            {title}
+          </Markdown>
+          <Markdown className="divMarkPrev">
+            {mark}
+          </Markdown>
+
           <div className="title-preview">
-            <h2>{title}</h2>
+          {file?`File choosen: ${file.name}`:null}
           </div>
-          <Markdown className="divMarkPrev">{mark}</Markdown>
+
+          <button className="submit" onClick={handleOnSubmit} disabled={mark == '' && file}>
+            Submit
+          </button>
         </div>
       )}
-      <div className="upload-button">
-        <input type="file" onChange={handleUpload} />
-      </div>
-      <button className="submit" onClick={handleOnSubmit}>
-        Submit
-      </button>
     </div>
   );
 }

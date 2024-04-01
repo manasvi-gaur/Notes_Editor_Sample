@@ -13,7 +13,7 @@ class User(AbstractUser):
     def __str__(self):
         return str(self.email)
 
-class Notes(models.Model):
+class Markdownedit(models.Model):
     title = models.CharField(max_length=100)
     notes = models.TextField(null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
