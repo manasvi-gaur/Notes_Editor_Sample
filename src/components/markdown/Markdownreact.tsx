@@ -119,7 +119,7 @@ function Markdownreact() {
           <div className="title-preview">
             <h2>{title}</h2>
           </div>
-          <Markdown className="center-div">{mark}</Markdown>
+          <Markdown className="divMarkPrev">{mark}</Markdown>
         </div>
       )}
       <div className="upload-button">
