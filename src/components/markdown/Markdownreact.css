@@ -14,9 +14,11 @@
 }
 
 .title-input{
-    width: 160vmin;
+    width: 30vmin;
+    height: 5vmin;
     margin-bottom: 2vmin;
     margin-top: 1vmin;
+
 }
 .mode-toggle-button{
     display: flex;
@@ -27,8 +29,28 @@
     margin-top: 0.7vmin;
 }
 
+.upload-button{
+    margin-top: 1.5vmin;
+}
 
+.mark-container{
+    margin-top: 0.7vmin;
+    border: 0.2vmin solid white;
+    border-radius: 6px;
+    margin-bottom: 0.7vmin;
+    padding: 2vmin;
+}
 
+.file{
+    border: 0.1vmin solid white;
+    width: fit-content;
+    padding: 0.5vmin;
+}
+
+.file-container{
+    display: flex;
+    justify-content: center;
+}
 /* 
 .left-side,
 .right-side {

@@ -121,18 +121,22 @@ function Markdownreact() {
 
       {mode === "preview" && (
         <div className="markdown-preview">
-          <Markdown className="title-preview">
-            {title}
-          </Markdown>
-          <Markdown className="divMarkPrev">
-            {mark}
-          </Markdown>
-
-          <div className="title-preview">
-          {file?`File choosen: ${file.name}`:null}
+          <div className="mark-container">
+            <Markdown className="title-preview">{title}</Markdown>
+            <Markdown className="divMarkPrev">{mark}</Markdown>
+            <div className="file-container">
+            <div className="title-preview file">
+              {file ? `File choosen: ${file.name}` : null}
+            </div>
+            </div>
+            
           </div>
 
-          <button className="submit" onClick={handleOnSubmit} disabled={mark == '' && file}>
+          <button
+            className="submit"
+            onClick={handleOnSubmit}
+            disabled={mark == "" && file}
+          >
             Submit
           </button>
         </div>
